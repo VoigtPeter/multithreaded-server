@@ -4,6 +4,7 @@
 
 ----------------------------------------------------------------------------------
 
+[![badge](/res/svg/version_badge.svg)](/LICENSE)
 [![badge](/res/svg/license_badge.svg)](/LICENSE)
 
 # Multithreaded Server Library for Java
