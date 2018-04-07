@@ -11,27 +11,27 @@
 This library for Java makes it easy to implement multithreaded servers and singlethreaded clients into your projects. It's designed to be utilizable in many different types of applications.
 
 ## Table of Contents
-+ [Getting Started]()
-	- [How to install]()
-		* [Build the library]()
-		* [Use the library]()
-		* [Import the project into Eclipse]()
-	- [How to use]()
-		* [Creating a server]()
-		* [Creating a client]()
-		* [The PacketElement class]()
-		* [The PacketHandler class]()
-+ [License]()
++ [Getting Started](#getting-started)
+	- [How to install](#how-to-install)
+		* [Build the library](#build-the-library)
+		* [Use the library](#use-the-library)
+		* [Import the project into Eclipse](#import-the-project-into-eclipse)
+	- [How to use](#how-to-use)
+		* [Creating a server](#creating-a-server)
+		* [Creating a client](#creating-a-client)
+		* [The PacketElement class](#the-packetelement-class)
+		* [The PacketHandler class](#the-packethandler-class)
++ [License](#license)
 
 ## Getting Started
-+ [How to install]()
-+ [How to use]()
++ [How to install](#how-to-install)
++ [How to use](#how-to-use)
 
 
 ## How to install
-+ [Build the library]()
-+ [Use the library]()
-+ [Import the project into Eclipse]()
++ [Build the library](#build-the-library)
++ [Use the library](#use-the-library)
++ [Import the project into Eclipse](#import-the-project-into-eclipse)
 
 
 ### Build the library
@@ -61,10 +61,10 @@ Click on the **'Browse...'** button next to the **'Project root directory'**. Ne
 
 
 ## How to use
-+ [Creating a server]()
-+ [Creating a client]()
-+ [The PacketElement class]()
-+ [The PacketHandler class]()
++ [Creating a server](#creating-a-server)
++ [Creating a client](#creating-a-client)
++ [The PacketElement class](#the-packetelement-class)
++ [The PacketHandler class](#the-packethandler-class)
 
 ### Creating a server
 
@@ -95,7 +95,7 @@ public class ExampleServer extends BasicServer {
   This method gets called every time a client connects to the server. It also  provides the corresponding `clientID` as a parameter.
 
 + **messageFromClient** <br />
-  This method gets called each time the server receives new data from one of the clients. Again the `clientID` is provided as a parameter. The received data (message) can be accessed through the `elements` array which consists of [PacketElements]().
+  This method gets called each time the server receives new data from one of the clients. Again the `clientID` is provided as a parameter. The received data (message) can be accessed through the `elements` array which consists of [PacketElements](#the-packetelement-class).
 
 **Some useful methods:**
 
@@ -164,7 +164,7 @@ public class ExampleClient extends BasicClient {
 ```
 
 + **messageFromServer** <br />
-  This method gets called each time the client receives new data from server. The received data (message) can be accessed through the `elements` array which consists of [PacketElements]().
+  This method gets called each time the client receives new data from server. The received data (message) can be accessed through the `elements` array which consists of [PacketElements](#the-packetelement-class).
 
 + **disconnectedFromServer** <br />
   This method gets called when the client gets disconnected from the server.
@@ -211,7 +211,7 @@ More examples can be found here. **(COMING SOON)**
 
 ### The PacketElement class
 
-Packet elements are objects containing binary data and other information. These objects can be packed with a [PacketHandler]() and afterwards sent from a client to a server and vice versa. The library does most of the [PacketHandler]() jobs for you so you don't need to manually pack all your packet elements.
+Packet elements are objects containing binary data and other information. These objects can be packed with a [PacketHandler](#the-packethandler-class) and afterwards sent from a client to a server and vice versa. The library does most of the [PacketHandler](#the-packethandler-class) jobs for you so you don't need to manually pack all your packet elements.
 
 ```java
 PacketElement packetElement = new PacketElement(); //Initializing the packet element
