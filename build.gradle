@@ -1,0 +1,34 @@
+apply plugin: 'java-library'
+
+version '0.1.0'
+
+sourceSets {
+	main.java.srcDir 'src/main'
+}
+
+jar {
+	baseName = rootProject.name + '_lib'
+	from 'LICENSE'
+	from 'README.md'
+}
+
+build.dependsOn 'createFullBuild'
+
+task createFullBuild {
+	dependsOn 'createSourceJar'
+	dependsOn 'createJavadocJar'
+}
+
+task createSourceJar(type: Jar) {
+	baseName = rootProject.name + '_source'
+	from('src/main') {
+		include '**'
+	}
+	from 'LICENSE'
+	from 'README.md'
+}
+
+task createJavadocJar(type: Jar, dependsOn: javadoc) {
+	baseName = rootProject.name + '_javadoc'
+	from javadoc.destinationDir
+}
