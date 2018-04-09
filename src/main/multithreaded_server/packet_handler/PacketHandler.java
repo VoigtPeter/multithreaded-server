@@ -11,8 +11,8 @@ import multithreaded_server.util.*;
  * <p>
  * This class implements methods for storing data inside packet objects.
  * 
- * @since 0.1.0
- * @version 0.1.0
+ * @since 0.2.0
+ * @version 0.2.0
  * @author Peter Voigt
  * 
  */
@@ -68,7 +68,7 @@ public class PacketHandler {
 				data.add(numberToByteArray(type));
 				data.add(BinaryEncoder.encodeString(ELEMENT_DATA_TYPE));
 
-				data.add(BinaryEncoder.encodeString(description));
+				data.add(description.getBytes());
 				data.add(BinaryEncoder.encodeString(ELEMENT_DATA_DESCRIPTION));
 
 				currentPos = endPos;
@@ -152,7 +152,7 @@ public class PacketHandler {
 			}
 			for (int h = currentPos; h < packet.length; h++) {
 				if (BinaryDecoder.decodeString(Arrays.copyOfRange(packet, h, h + ELEMENT_DATA_DESCRIPTION.length())).equals(ELEMENT_DATA_DESCRIPTION)) {
-					dataDescription = BinaryDecoder.decodeString(Arrays.copyOfRange(packet, currentPos, h));
+					dataDescription = new String(Arrays.copyOfRange(packet, currentPos, h));
 					currentPos = h + ELEMENT_DATA_DESCRIPTION.length();
 					break;
 				}

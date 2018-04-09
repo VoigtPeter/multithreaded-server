@@ -9,8 +9,8 @@ import java.net.Socket;
  * <p>
  * This class accepts clients.
  * 
- * @since 0.1.0
- * @version 0.1.0
+ * @since 0.2.0
+ * @version 0.2.0
  * @author Peter Voigt
  *
  */
