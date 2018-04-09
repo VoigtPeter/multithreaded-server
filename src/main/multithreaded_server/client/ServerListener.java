@@ -10,7 +10,7 @@ import multithreaded_server.packet_handler.PacketElement;
  * <p>
  * This class is responsible for receiving data from the server.
  * 
- * @since 0.2.0
+ * @since 0.1.0
  * @version 0.2.0
  * @author Peter Voigt
  *
