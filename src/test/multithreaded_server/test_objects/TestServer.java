@@ -26,14 +26,13 @@ public class TestServer extends BasicServer {
 
 	@Override
 	public void messageFromClient(int clientID, PacketElement[] elements) {
-		System.out.println("new message from client (ID=" + clientID + ")");
 		elementHistoryStack.add(elements);
 		clientHistoryStack.add(clientID);
 	}
 
 	@Override
 	public void clientConnected(int clientID) {
-		System.out.println("new client connected (ID=" + clientID + ")");
+
 	}
 
 }

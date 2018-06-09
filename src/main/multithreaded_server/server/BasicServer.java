@@ -138,7 +138,6 @@ public abstract class BasicServer {
 			}
 		}
 		messageFromClient(clientID, elements);
-		System.out.println("we got some shit!! ayy");
 	}
 
 	/**

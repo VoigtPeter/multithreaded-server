@@ -24,7 +24,6 @@ public class TestClient extends BasicClient {
 	
 	@Override
 	public void messageFromServer(PacketElement[] elements) {
-		System.out.println("a client got some fucking thing mate");
 		elementHistoryStack.add(elements);
 	}
 

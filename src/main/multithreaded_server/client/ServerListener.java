@@ -56,7 +56,6 @@ class ServerListener implements Runnable {
 				}
 				client.messageFromServer(return_elements);
 			} catch (IOException e) {
-				System.out.println("actual_stop" + "ID: " + client.currentID);
 				if(client.isActive == true) {
 					client.stopClient();
 				}
