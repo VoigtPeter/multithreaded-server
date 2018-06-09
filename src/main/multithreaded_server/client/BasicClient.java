@@ -14,7 +14,7 @@ import multithreaded_server.packet_handler.PacketHandler;
  * This class implements a client object.
  * 
  * @since 0.1.0
- * @version 0.3.0
+ * @version 0.3.1
  * @author Peter Voigt
  *
  */

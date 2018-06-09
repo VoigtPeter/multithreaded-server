@@ -9,6 +9,14 @@ import multithreaded_server.packet_handler.PacketElement;
 import multithreaded_server.test_objects.TestClient;
 import multithreaded_server.test_objects.TestServer;
 
+/**
+ * DataTransferTest
+ * 
+ * @since 0.3.0
+ * @version 0.3.1
+ * @author Peter Voigt
+ *
+ */
 public class DataTransferTest {
 	
 	@Test

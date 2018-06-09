@@ -10,7 +10,7 @@ import multithreaded_server.util.BinaryEncoder;
  * BinaryEncoderDecoderTest
  * 
  * @since 0.2.0
- * @version 0.2.0
+ * @version 0.3.1
  * @author Peter Voigt
  *
  */

@@ -3,3 +3,4 @@
 /build/
 /src/test/multithreaded_server/client/
 /src/test/multithreaded_server/test_objects/
+/src/test/multithreaded_server/data_transfer/

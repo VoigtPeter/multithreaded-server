@@ -9,7 +9,7 @@ import multithreaded_server.packet_handler.PacketElement;
  * PacketElementTest
  * 
  * @since 0.2.0
- * @version 0.2.0
+ * @version 0.3.1
  * @author Peter Voigt
  *
  */
