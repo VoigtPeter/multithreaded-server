@@ -10,7 +10,7 @@ import java.net.Socket;
  * This class accepts clients.
  * 
  * @since 0.1.0
- * @version 0.2.0
+ * @version 0.3.0
  * @author Peter Voigt
  *
  */
@@ -18,7 +18,7 @@ class ClientConnectionListener implements Runnable {
 
 	private BasicServer server;
 	private boolean isRunning = true;
-	private ServerSocket serverSocket;
+	protected ServerSocket serverSocket;
 
 	public ClientConnectionListener(BasicServer server) {
 		this.server = server;
@@ -26,12 +26,6 @@ class ClientConnectionListener implements Runnable {
 
 	public void stopClientConnectionListener() {
 		isRunning = false;
-		try {
-			serverSocket.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		serverSocket = null;
 	}
 
 	@Override
@@ -45,7 +39,10 @@ class ClientConnectionListener implements Runnable {
 					this.server.newClient(this.server.clients.size() - 1);
 				}
 			}
-			serverSocket.close();
+			if(serverSocket != null) {
+				serverSocket.close();
+				serverSocket = null;
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

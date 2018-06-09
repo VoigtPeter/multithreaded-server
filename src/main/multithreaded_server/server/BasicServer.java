@@ -46,6 +46,7 @@ public abstract class BasicServer {
 	 *            The server port
 	 */
 	public void startServer(int port) {
+		this.port = port;
 		isRunning = true;
 		clients = new ArrayList<ClientObject>();
 		clientConnectionListener = new ClientConnectionListener(this);
@@ -59,6 +60,14 @@ public abstract class BasicServer {
 	public void stopServer() {
 		if (isRunning == true) {
 			clientConnectionListener.stopClientConnectionListener();
+			if(clientConnectionListener.serverSocket != null) {
+				try {
+					clientConnectionListener.serverSocket.close();
+					clientConnectionListener.serverSocket = null;
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 			clientConnectionListener = null;
 			isRunning = false;
 		}
@@ -129,6 +138,7 @@ public abstract class BasicServer {
 			}
 		}
 		messageFromClient(clientID, elements);
+		System.out.println("we got some shit!! ayy");
 	}
 
 	/**

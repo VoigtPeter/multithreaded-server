@@ -14,7 +14,7 @@ import multithreaded_server.packet_handler.PacketHandler;
  * This class implements a client object.
  * 
  * @since 0.1.0
- * @version 0.2.0
+ * @version 0.3.0
  * @author Peter Voigt
  *
  */
@@ -27,6 +27,7 @@ public abstract class BasicClient {
 	public int currentID = -1;
 	private ServerListener serverListener;
 	public PacketHandler packetHandler;
+	private DataOutputStream dataOutputStream;
 
 	/**
 	 * This method is called when the client receives a packet from the server
@@ -82,14 +83,17 @@ public abstract class BasicClient {
 	 * This method stops the client and disconnects it from the server
 	 */
 	public void stopClient() {
+		serverListener.stopServerListener();
 		PacketElement[] element = { new PacketElement("[disconnect]".getBytes(), PacketElement.SERVER_MESSAGE) };
 		sendToServer(element);
 		isActive = false;
-		serverListener.stopServerListener();
-		try {
-			clientSocket.close();
-		} catch (IOException e) {
-			e.printStackTrace();
+		if(clientSocket != null) {
+			try {
+				clientSocket.close();
+				clientSocket = null;
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		disconnectedFromServer();
 	}
@@ -103,7 +107,7 @@ public abstract class BasicClient {
 	public void sendToServer(PacketElement[] elements) {
 		if (isActive == true) {
 			try {
-				DataOutputStream dataOutputStream = new DataOutputStream(clientSocket.getOutputStream());
+				dataOutputStream = new DataOutputStream(clientSocket.getOutputStream());
 				for (int i = 0; i < elements.length; i++) {
 					packetHandler.addElement(elements[i]);
 				}

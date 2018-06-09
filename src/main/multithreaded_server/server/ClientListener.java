@@ -10,7 +10,7 @@ import java.net.Socket;
  * This class is responsible for receiving data from a client.
  * 
  * @since 0.1.0
- * @version 0.2.0
+ * @version 0.3.0
  * @author Peter Voigt
  *
  */
@@ -48,7 +48,7 @@ class ClientListener implements Runnable {
 				}
 			} catch (IOException e) {
 				server.removeClient(clientID);
-				e.printStackTrace();
+				//e.printStackTrace();
 			}
 		}
 	}
