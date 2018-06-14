@@ -18,4 +18,5 @@
 + **0.3.1**
 	- bug-fixes
 + **0.3.2** **[Current Version]**
+	- bug-fixes
 	- new port handler for dynamic port use

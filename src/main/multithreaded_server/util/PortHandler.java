@@ -38,7 +38,7 @@ public class PortHandler {
 	 */
 	public static void removePortFromUsed(int port) {
 		if(PORT_TABLE.contains(port) == true) {
-			PORT_TABLE.remove(port);
+			PORT_TABLE.remove(PORT_TABLE.indexOf(port));
 		}
 	}
 	
@@ -60,7 +60,7 @@ public class PortHandler {
 	 */
 	public static void removePortFromBlacklist(int port) {
 		if(BLACKLIST.contains(port) == true) {
-			BLACKLIST.remove(port);
+			BLACKLIST.remove(BLACKLIST.indexOf(port));
 		}
 	}
 	
@@ -82,7 +82,7 @@ public class PortHandler {
 	 */
 	public static void removePortFromWhitelist(int port) {
 		if(WHITELIST.contains(port) == true) {
-			WHITELIST.remove(port);
+			WHITELIST.remove(WHITELIST.indexOf(port));
 		}
 	}
 	
@@ -116,7 +116,7 @@ public class PortHandler {
 	 */
 	public static void freePort(int port) {
 		if(RESERVED.contains(port) == true) {
-			RESERVED.remove(port);
+			RESERVED.remove(RESERVED.indexOf(port));
 		}
 	}
 	
