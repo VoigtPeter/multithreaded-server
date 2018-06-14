@@ -13,7 +13,7 @@ import multithreaded_server.test_objects.TestServer;
  * DataTransferTest
  * 
  * @since 0.3.0
- * @version 0.3.1
+ * @version 0.3.2
  * @author Peter Voigt
  *
  */

@@ -13,7 +13,7 @@ import javax.imageio.ImageIO;
  * This class implements a packet object for storing binary data.
  * 
  * @since 0.1.0
- * @version 0.3.1
+ * @version 0.3.2
  * @author Peter Voigt
  * 
  */

@@ -11,7 +11,7 @@ import java.io.ObjectInputStream;
  * This class implements a binary decoder.
  * 
  * @since 0.1.0
- * @version 0.3.1
+ * @version 0.3.2
  * @author Peter Voigt
  * 
  */

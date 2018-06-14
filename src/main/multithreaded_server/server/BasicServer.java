@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import multithreaded_server.packet_handler.PacketElement;
+import multithreaded_server.util.PortHandler;
 
 
 /**
@@ -14,7 +15,7 @@ import multithreaded_server.packet_handler.PacketElement;
  * This class implements a server object.
  * 
  * @since 0.1.0
- * @version 0.3.1
+ * @version 0.3.2
  * @author Peter Voigt
  *
  */
@@ -52,6 +53,7 @@ public abstract class BasicServer {
 		clientConnectionListener = new ClientConnectionListener(this);
 		Thread clientConnectionListenerThread = new Thread(clientConnectionListener);
 		clientConnectionListenerThread.start();
+		PortHandler.usePort(this.port);
 	}
 
 	/**
@@ -70,6 +72,7 @@ public abstract class BasicServer {
 			}
 			clientConnectionListener = null;
 			isRunning = false;
+			PortHandler.removePortFromUsed(this.port);
 		}
 	}
 

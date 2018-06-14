@@ -10,7 +10,7 @@ import java.net.Socket;
  * This class is responsible for receiving data from a client.
  * 
  * @since 0.1.0
- * @version 0.3.1
+ * @version 0.3.2
  * @author Peter Voigt
  *
  */

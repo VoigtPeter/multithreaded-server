@@ -10,7 +10,7 @@ import multithreaded_server.packet_handler.PacketHandler;
  * This class represents a client object.
  * 
  * @since 0.1.0
- * @version 0.3.1
+ * @version 0.3.2
  * @author Peter Voigt
  *
  */
