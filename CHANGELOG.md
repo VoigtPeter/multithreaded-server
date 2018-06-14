@@ -15,5 +15,7 @@
 	- added unit tests
 		* *BasicClientTest*
 		* *DataTransferTest*
-+ **0.3.1** **[Current Version]**
++ **0.3.1**
 	- bug-fixes
++ **0.3.2** **[Current Version]**
+	- new port handler for dynamic port use
