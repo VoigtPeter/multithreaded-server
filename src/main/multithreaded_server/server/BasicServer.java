@@ -8,7 +8,6 @@ import java.util.List;
 import multithreaded_server.packet_handler.PacketElement;
 import multithreaded_server.util.PortHandler;
 
-
 /**
  * BasicServer
  * <p>
@@ -30,13 +29,16 @@ public abstract class BasicServer {
 	/**
 	 * 
 	 * @param clientID
+	 *            The client ID
 	 * @param elements
+	 *            The received elements
 	 */
 	public abstract void messageFromClient(int clientID, PacketElement[] elements);
 
 	/**
 	 * 
 	 * @param clientID
+	 *            The client ID
 	 */
 	public abstract void clientConnected(int clientID);
 
@@ -62,7 +64,7 @@ public abstract class BasicServer {
 	public void stopServer() {
 		if (isRunning == true) {
 			clientConnectionListener.stopClientConnectionListener();
-			if(clientConnectionListener.serverSocket != null) {
+			if (clientConnectionListener.serverSocket != null) {
 				try {
 					clientConnectionListener.serverSocket.close();
 					clientConnectionListener.serverSocket = null;
@@ -105,7 +107,7 @@ public abstract class BasicServer {
 	protected void newClient(int clientID) {
 		PacketElement[] e = { new PacketElement(("[set_id]=" + clientID).getBytes(), PacketElement.SERVER_MESSAGE) };
 		sendToClient(clientID, e);
-		
+
 		clientConnected(clientID);
 	}
 
@@ -135,7 +137,8 @@ public abstract class BasicServer {
 				if (new String(elements[i].getData()).equals("[disconnect]")) {
 					removeClient(clientID);
 				} else if (new String(elements[i].getData()).equals("[client_id]")) {
-					PacketElement[] e = { new PacketElement(("[set_id]=" + clientID).getBytes(), PacketElement.SERVER_MESSAGE) };
+					PacketElement[] e = {
+							new PacketElement(("[set_id]=" + clientID).getBytes(), PacketElement.SERVER_MESSAGE) };
 					sendToClient(clientID, e);
 				}
 			}
@@ -154,15 +157,18 @@ public abstract class BasicServer {
 		clients.remove(clientID);
 		for (int i = clientID; i < clients.size(); i++) {
 			clients.get(i).setClientID(clients.get(i).getClientID() - 1);
-			PacketElement[] element = { new PacketElement(("[set_id]=" + clients.get(i).getClientID()).getBytes(), PacketElement.SERVER_MESSAGE) };
+			PacketElement[] element = { new PacketElement(("[set_id]=" + clients.get(i).getClientID()).getBytes(),
+					PacketElement.SERVER_MESSAGE) };
 			sendToClient(clients.get(i).getClientID(), element);
 		}
 	}
 
 	/**
-	 * This method sets the maximum amount of clients that can be connected to the server at the same time
+	 * This method sets the maximum amount of clients that can be connected to the
+	 * server at the same time
 	 * 
 	 * @param maxClients
+	 *            The maximum amount of clients
 	 */
 	public void setMaxClients(int maxClients) {
 		this.maxClients = maxClients;

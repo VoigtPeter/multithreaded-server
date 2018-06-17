@@ -30,7 +30,8 @@ public class PacketElement {
 	private int type = 0;
 	private String description = "no description";
 
-	public PacketElement() {}
+	public PacketElement() {
+	}
 
 	public PacketElement(byte[] data, int type) {
 		this.data = data;
@@ -72,7 +73,7 @@ public class PacketElement {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	public void setData(byte[] data) {
 		this.data = data;
 	}

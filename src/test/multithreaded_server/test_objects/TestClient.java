@@ -17,11 +17,11 @@ import multithreaded_server.packet_handler.PacketElement;
 public class TestClient extends BasicClient {
 
 	public List<PacketElement[]> elementHistoryStack;
-	
+
 	public TestClient() {
 		elementHistoryStack = new ArrayList<PacketElement[]>();
 	}
-	
+
 	@Override
 	public void messageFromServer(PacketElement[] elements) {
 		elementHistoryStack.add(elements);
@@ -29,12 +29,12 @@ public class TestClient extends BasicClient {
 
 	@Override
 	public void disconnectedFromServer() {
-		
+
 	}
 
 	@Override
 	public void unableToConnect() {
-		
+
 	}
 
 }

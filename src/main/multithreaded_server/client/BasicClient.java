@@ -54,6 +54,9 @@ public abstract class BasicClient {
 	 *            The server port
 	 * @param ip
 	 *            The server IP
+	 * 
+	 * @return TRUE if the client successfully connected to the server; FALSE if
+	 *         something went wrong and the client didn't connect to the server
 	 */
 	public boolean connectToServer(int port, String ip) {
 		this.port = port;
@@ -87,7 +90,7 @@ public abstract class BasicClient {
 		PacketElement[] element = { new PacketElement("[disconnect]".getBytes(), PacketElement.SERVER_MESSAGE) };
 		sendToServer(element);
 		isActive = false;
-		if(clientSocket != null) {
+		if (clientSocket != null) {
 			try {
 				clientSocket.close();
 				clientSocket = null;

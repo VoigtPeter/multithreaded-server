@@ -15,10 +15,10 @@ import multithreaded_server.server.BasicServer;
  *
  */
 public class TestServer extends BasicServer {
-	
+
 	public List<PacketElement[]> elementHistoryStack;
 	public List<Integer> clientHistoryStack;
-	
+
 	public TestServer() {
 		elementHistoryStack = new ArrayList<PacketElement[]>();
 		clientHistoryStack = new ArrayList<Integer>();

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import multithreaded_server.util.*;
- 
+
 /**
  * PacketHandler
  * <p>
@@ -94,7 +94,8 @@ public class PacketHandler {
 				elements.remove(currentElements.get(i));
 			}
 
-			//System.out.println("--> Packet succesfully created | Size: " + ((float) totalSize / 1000f) + "KB");
+			// System.out.println("--> Packet succesfully created | Size: " + ((float)
+			// totalSize / 1000f) + "KB");
 
 			return packet;
 		}
@@ -112,7 +113,8 @@ public class PacketHandler {
 		int totalElements = 0;
 		int currentPos = 0;
 		for (int i = 0; i < packet.length; i++) {
-			if (BinaryDecoder.decodeString(Arrays.copyOfRange(packet, i, i + END_INFORMATION_1.length())).equals(END_INFORMATION_1)) {
+			if (BinaryDecoder.decodeString(Arrays.copyOfRange(packet, i, i + END_INFORMATION_1.length()))
+					.equals(END_INFORMATION_1)) {
 				totalElements = byteArrayToNumber(Arrays.copyOfRange(packet, 0, i));
 				currentPos = i + END_INFORMATION_1.length();
 				break;
@@ -130,28 +132,32 @@ public class PacketHandler {
 			int dataType = 0;
 			String dataDescription = "";
 			for (int h = currentPos; h < packet.length; h++) {
-				if (BinaryDecoder.decodeString(Arrays.copyOfRange(packet, h, h + START_POS_ELEMENT.length())).equals(START_POS_ELEMENT)) {
+				if (BinaryDecoder.decodeString(Arrays.copyOfRange(packet, h, h + START_POS_ELEMENT.length()))
+						.equals(START_POS_ELEMENT)) {
 					startPos = byteArrayToNumber(Arrays.copyOfRange(packet, currentPos, h));
 					currentPos = h + START_POS_ELEMENT.length();
 					break;
 				}
 			}
 			for (int h = currentPos; h < packet.length; h++) {
-				if (BinaryDecoder.decodeString(Arrays.copyOfRange(packet, h, h + END_POS_ELEMENT.length())).equals(END_POS_ELEMENT)) {
+				if (BinaryDecoder.decodeString(Arrays.copyOfRange(packet, h, h + END_POS_ELEMENT.length()))
+						.equals(END_POS_ELEMENT)) {
 					endPos = byteArrayToNumber(Arrays.copyOfRange(packet, currentPos, h));
 					currentPos = h + END_POS_ELEMENT.length();
 					break;
 				}
 			}
 			for (int h = currentPos; h < packet.length; h++) {
-				if (BinaryDecoder.decodeString(Arrays.copyOfRange(packet, h, h + ELEMENT_DATA_TYPE.length())).equals(ELEMENT_DATA_TYPE)) {
+				if (BinaryDecoder.decodeString(Arrays.copyOfRange(packet, h, h + ELEMENT_DATA_TYPE.length()))
+						.equals(ELEMENT_DATA_TYPE)) {
 					dataType = byteArrayToNumber(Arrays.copyOfRange(packet, currentPos, h));
 					currentPos = h + ELEMENT_DATA_TYPE.length();
 					break;
 				}
 			}
 			for (int h = currentPos; h < packet.length; h++) {
-				if (BinaryDecoder.decodeString(Arrays.copyOfRange(packet, h, h + ELEMENT_DATA_DESCRIPTION.length())).equals(ELEMENT_DATA_DESCRIPTION)) {
+				if (BinaryDecoder.decodeString(Arrays.copyOfRange(packet, h, h + ELEMENT_DATA_DESCRIPTION.length()))
+						.equals(ELEMENT_DATA_DESCRIPTION)) {
 					dataDescription = new String(Arrays.copyOfRange(packet, currentPos, h));
 					currentPos = h + ELEMENT_DATA_DESCRIPTION.length();
 					break;
@@ -177,6 +183,7 @@ public class PacketHandler {
 	 * This method adds one element to the element list
 	 * 
 	 * @param element
+	 *            The element
 	 */
 	public void addElement(PacketElement element) {
 		elements.add(element);

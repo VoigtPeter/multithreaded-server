@@ -21,23 +21,25 @@ public class BinaryEncoderDecoderTest {
 		String numbers = "1234567890";
 		Assert.assertTrue(numbers.equals(BinaryDecoder.decodeString(BinaryEncoder.encodeString(numbers))));
 	}
-	
+
 	@Test
 	public void testEncodeDecodeLowerCaseLetters() {
 		String lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
-		Assert.assertTrue(lowerCaseLetters.equals(BinaryDecoder.decodeString(BinaryEncoder.encodeString(lowerCaseLetters))));
+		Assert.assertTrue(
+				lowerCaseLetters.equals(BinaryDecoder.decodeString(BinaryEncoder.encodeString(lowerCaseLetters))));
 	}
-	
+
 	@Test
 	public void testEncodeDecodeUpperCaseLetters() {
 		String upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		Assert.assertTrue(upperCaseLetters.equals(BinaryDecoder.decodeString(BinaryEncoder.encodeString(upperCaseLetters))));
+		Assert.assertTrue(
+				upperCaseLetters.equals(BinaryDecoder.decodeString(BinaryEncoder.encodeString(upperCaseLetters))));
 	}
-	
+
 	@Test
 	public void testEncodeDecodeSymbols() {
 		String symbols = ".-:+=^!/*?&<>()[]{}@%$#";
 		Assert.assertTrue(symbols.equals(BinaryDecoder.decodeString(BinaryEncoder.encodeString(symbols))));
 	}
-	
+
 }

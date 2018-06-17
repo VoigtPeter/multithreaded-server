@@ -39,7 +39,7 @@ class ClientConnectionListener implements Runnable {
 					this.server.newClient(this.server.clients.size() - 1);
 				}
 			}
-			if(serverSocket != null) {
+			if (serverSocket != null) {
 				serverSocket.close();
 				serverSocket = null;
 			}

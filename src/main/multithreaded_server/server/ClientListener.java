@@ -48,7 +48,7 @@ class ClientListener implements Runnable {
 				}
 			} catch (IOException e) {
 				server.removeClient(clientID);
-				//e.printStackTrace();
+				// e.printStackTrace();
 			}
 		}
 	}

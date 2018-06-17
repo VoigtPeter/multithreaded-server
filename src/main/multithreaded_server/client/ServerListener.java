@@ -56,10 +56,10 @@ class ServerListener implements Runnable {
 				}
 				client.messageFromServer(return_elements);
 			} catch (IOException e) {
-				if(client.isActive == true) {
+				if (client.isActive == true) {
 					client.stopClient();
 				}
-				//e.printStackTrace();
+				// e.printStackTrace();
 			}
 		}
 	}

@@ -37,6 +37,13 @@ task createSourceJar(type: Jar) {
 	from 'README.md'
 }
 
+/* for testing purposes only
+javadoc {
+	classpath += sourceSets.test.compileClasspath
+	source += sourceSets.test.allJava
+}
+//*/
+
 task createJavadocJar(type: Jar, dependsOn: javadoc) {
 	baseName = rootProject.name + '_javadoc'
 	from javadoc.destinationDir
