@@ -41,7 +41,7 @@ This will compile the library, the javadoc and the source attachments.
 
 After you [built the library](#build-the-library) there should be a new folder called **'build'** in the root folder of the repository. The JARs are inside of a folder called **'libs'** (**\\..\\multithreaded-server\\build\\libs\\**). <br />
 
-#### Import the library in Eclipse
+#### Import the library into Eclipse
 Make a right click on your project and navigate to **'Properties'**. Select **'Java Build Path'** and go to the **'Libraries'** tab. Press the **'Add External JARs...'** button and select the library JAR. <br />
 Now the library should show up in the list. If you want to attach the sources and the javadoc, you can do this by folding up the library in the list.
 
