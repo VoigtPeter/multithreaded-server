@@ -1,4 +1,4 @@
-[![version_badge](/res/svg/version_badge.svg)](#)
+[![version_badge](/res/svg/version_badge.svg)](/CHANGELOG.md)
 [![license_badge](/res/svg/license_badge.svg)](/LICENSE)
 
 # Multithreaded Server Library for Java
